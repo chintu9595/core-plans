@@ -1,12 +1,12 @@
 pkg_name=cockroach
 pkg_origin=core
-pkg_version=2.0.6
+pkg_version=2.1.2
 pkg_description="CockroachDB is a cloud-native SQL database for building global, scalable cloud services that survive disasters."
 pkg_upstream_url=https://github.com/cockroachdb/cockroach
 pkg_license=('Apache-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://binaries.cockroachdb.com/cockroach-v${pkg_version}.src.tgz
-pkg_shasum=fd1d966542565cbeca6c390db6b7afd98bc239e6e2a4602b3edff973be472097
+pkg_shasum=36f2dcf487d18c76471bdf7eff48c0ff4a4355026e1a06739cc388a711c99769
 pkg_dirname="${pkg_name}-v${pkg_version}"
 pkg_deps=(
   core/gcc-libs
@@ -46,9 +46,9 @@ do_build() {
   make buildoss
 }
 
-do_install() {
+do_install() { 
   pushd "./src/github.com/cockroachdb/cockroach" > /dev/null
-  cp -v cockroach bin/* "${pkg_prefix}/bin/"
+  cp -v cockroachoss bin/* "${pkg_prefix}/bin/"
   popd > /dev/null
 }
 
