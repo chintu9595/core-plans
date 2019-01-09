@@ -1,5 +1,5 @@
 pkg_name=ansible
-pkg_origin=core
+pkg_origin=demo-sample
 pkg_version="2.7.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=("GPL-3.0")
